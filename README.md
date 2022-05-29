@@ -18,11 +18,22 @@ $ <Provider store={store}><App/></Provider>
 $ import { useSelector } from 'react-redux';
 ```
 
-hook in your react component.
+-  import and use useDispatch hook
+
+```bash
+$ import { useDispatch } from 'react-redux';
+```
+
 -  call Redux state in react component : 
 
 ```bash
 $ const yourState = useSelector((state) => state.sliceName.value)
+```
+
+-  call Redux state method in react component : 
+
+```bash
+$ onClick={() => {dispatch(reduxMethod())}}
 ```
 
 - [Redux toolkit doc](https://redux-toolkit.js.org/)
