@@ -9,12 +9,28 @@
     -  add ```<Provider store={store}></Provider>``` tag from react-redux dependance between ```<App/>``` tag.
 
 <h3>Use redux in react component</h3>
--  import and use ```useSelector``` hook in your react component.
--  call Redux state in react component : ```const yourState = useSelector((state) => state.sliceName.value)```
+-  import and use 
+```bash
+useSelector
+``` 
+hook in your react component.
+-  call Redux state in react component : 
+```bash 
+const yourState = useSelector((state) => state.sliceName.value)
+```
 -  call Redux state method  in react component : 
-    -  import ```useDispatch``` hook
-    -   init useDispatch hook : ```const dispatch = useDispatch()```
-    -  call redux state method : ```onClick={() => {dispatch(reduxMethod())}}```
+    -  import 
+```bash 
+useDispatch
+``` 
+    -   init useDispatch hook : 
+```bash 
+const dispatch = useDispatch()
+```
+    -  call redux state method : 
+```bash 
+onClick={() => {dispatch(reduxMethod())}}
+```
 
 - [Redux toolkit doc](https://redux-toolkit.js.org/)
 - [React doc](https://fr.reactjs.org/)
