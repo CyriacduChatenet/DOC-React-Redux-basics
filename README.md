@@ -14,7 +14,7 @@ $ <Provider store={store}><App/></Provider>
 <h3>Use redux in react component</h3>
 -  import and use 
 ```bash
-$ useSelector
+$ import { useSelector } from 'react-redux';
 ```
 
 hook in your react component.
