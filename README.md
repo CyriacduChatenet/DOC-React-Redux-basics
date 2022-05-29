@@ -1,5 +1,5 @@
 <div style="display:flex;align-items:center;justify-content:center;width:100%;height:10vh;">
-<img src="https://www.baptiste-donaux.fr/react-redux-concept/react-redux.png" alt="react redux" width="60">
+<img src="https://www.baptiste-donaux.fr/react-redux-concept/react-redux.png" alt="react redux" width="120">
 <h3>Redux toolkit Basics</h3>
 </div>
 
