@@ -12,13 +12,15 @@ $ <Provider store={store}><App/></Provider>
 ```
 
 <h3>Use redux in react component</h3>
--  import and use 
+-  import and use useSelector hook
+
 ```bash
 $ import { useSelector } from 'react-redux';
 ```
 
 hook in your react component.
 -  call Redux state in react component : 
+
 ```bash
 $ const yourState = useSelector((state) => state.sliceName.value)
 ```
