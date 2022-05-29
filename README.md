@@ -33,4 +33,4 @@ onClick={() => {dispatch(reduxMethod())}}
 ```
 
 - [Redux toolkit doc](https://redux-toolkit.js.org/)
-- [React doc](https://fr.reactjs.org/)
+- [React doc](https://fr.reactjs.org/) 
