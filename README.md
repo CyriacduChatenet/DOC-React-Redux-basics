@@ -24,4 +24,4 @@ $ const yourState = useSelector((state) => state.sliceName.value)
 ```
 
 - [Redux toolkit doc](https://redux-toolkit.js.org/)
-- [React doc](https://fr.reactjs.org/) 
+- [React doc](https://fr.reactjs.org/)
