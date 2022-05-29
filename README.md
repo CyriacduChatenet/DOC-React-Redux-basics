@@ -3,6 +3,26 @@
 <h3>Redux toolkit Basics</h3>
 </div>
 
+
+<h3>Init Redux</h3>
+<h5>Install dependancies</h5>
+
+```bash
+$ npm i redux react-redux @reduxjs/toolkit
+```
+
+<h5>React Redux template with JavaScript</h5>
+
+```bash
+$ npx create-react-app my-app --template redux
+```
+
+<h5>React Redux template with TypeScript</h5>
+
+```bash
+$ npx create-react-app my-app --template redux-typescript
+```
+
 <h3>Init Redux store</h3>
 
 ```bash
