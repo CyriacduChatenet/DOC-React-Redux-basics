@@ -3,6 +3,35 @@
 <h3>Redux toolkit Basics</h3>
 </div>
 
+<h3>Init Redux store</h3>
+
+```bash
+$ export const store = configureStore({
+  reducer: {
+    // your reducers
+  },
+});
+```
+
+<h3>Init Redux slice</h3>
+
+```bash
+$ import { createSlice } from "@reduxjs/toolkit";
+
+export const yourSlice = createSlice({
+    name : "yourSlice",
+    initialState : {
+        // state
+    },
+    reducers : {
+        // methods
+    }
+})
+
+export const {//methods} = counterSlice.actions;
+export default counterSlice.reducer;
+```
+
 <h3>Acces to Redux state from react app</h3>
 -   go to index.js file of your react app :
 -   add Provider tag from react-redux dependance between App tag
