@@ -8,26 +8,26 @@
 <h5>Install dependancies</h5>
 
 ```bash
-$ npm i redux react-redux @reduxjs/toolkit
+npm i redux react-redux @reduxjs/toolkit
 ```
 
 <h5>React Redux template with JavaScript</h5>
 
 ```bash
-$ npx create-react-app my-app --template redux
+npx create-react-app my-app --template redux
 ```
 
 <h5>React Redux template with TypeScript</h5>
 
 ```bash
-$ npx create-react-app my-app --template redux-typescript
+npx create-react-app my-app --template redux-typescript
 ```
 
 <h3>Init Redux store</h3>
 <h5>in JS</h5>
 
 ```bash
-$ export const store = configureStore({
+export const store = configureStore({
   reducer: {
     // your reducers
   },
@@ -37,7 +37,7 @@ $ export const store = configureStore({
 <h5>in TS</h5>
 
 ```bash
-$ export const store = configureStore({
+export const store = configureStore({
   reducer: {
     // your reducers
   },
@@ -51,7 +51,7 @@ export type RootState = ReturnType<typeof store.getState>
 <h6>Configure redux hooks types</h6>
 
 ```bash
-$ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import type { RootState, AppDispatch } from '../store/store'
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
@@ -63,7 +63,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 <h5>in JS</h5>
 
 ```bash
-$ import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const yourSlice = createSlice({
     name : "yourSlice",
@@ -82,14 +82,14 @@ export default counterSlice.reducer;
 <h5>in TS</h5>
 
 ```bash
-$ import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 interface SliceState {
     value: number
   }  
 
-  const initialState: CounterState = {
+  const initialState: SliceState = {
     value: 0,
   }
 
@@ -125,28 +125,28 @@ $ <Provider store={store}><App/></Provider>
 <h5>in JS & TS</h5>
 
 ```bash
-$ import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 ```
 
 -  import and use useDispatch hook
 <h5>in JS & TS</h5>
 
 ```bash
-$ import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 ```
 
 -  call Redux state in react component : 
 <h5>in JS & TS</h5>
 
 ```bash
-$ const yourState = useSelector((state) => state.sliceName.value)
+const yourState = useSelector((state) => state.sliceName.value)
 ```
 
 -  call Redux state method in react component : 
 <h5>in JS & TS</h5>
 
 ```bash
-$ onClick={() => {dispatch(reduxMethod())}}
+onClick={() => {dispatch(reduxMethod())}}
 ```
 
 - [Redux toolkit doc](https://redux-toolkit.js.org/)
