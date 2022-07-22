@@ -25,6 +25,7 @@ $ npx create-react-app my-app --template redux-typescript
 
 <h3>Init Redux store</h3>
 <h5>in JS</h5>
+
 ```bash
 $ export const store = configureStore({
   reducer: {
@@ -34,6 +35,7 @@ $ export const store = configureStore({
 ```
 
 <h5>in TS</h5>
+
 ```bash
 $ export const store = configureStore({
   reducer: {
@@ -47,6 +49,7 @@ export const useAppDispatch = () => useDispatch<AppDispatch>()
 export type RootState = ReturnType<typeof store.getState>
 ```
 <h6>Configure redux hooks types</h6>
+
 ```bash
 $ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import type { RootState, AppDispatch } from '../store/store'
@@ -58,6 +61,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 
 <h3>Init Redux slice</h3>
 <h5>in JS</h5>
+
 ```bash
 $ import { createSlice } from "@reduxjs/toolkit";
 
@@ -76,6 +80,7 @@ export default counterSlice.reducer;
 ```
 
 <h5>in TS</h5>
+
 ```bash
 $ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
@@ -110,6 +115,7 @@ export default counterSlice.reducer;
 -   go to index.(j/t)s file of your react app :
 -   add Provider tag from react-redux dependance between App tag
 <h5>in JS & TS</h5>
+
 ```bash
 $ <Provider store={store}><App/></Provider>
 ```
@@ -117,24 +123,28 @@ $ <Provider store={store}><App/></Provider>
 <h3>Use redux in react component</h3>
 -  import and use useSelector hook
 <h5>in JS & TS</h5>
+
 ```bash
 $ import { useSelector } from 'react-redux';
 ```
 
 -  import and use useDispatch hook
 <h5>in JS & TS</h5>
+
 ```bash
 $ import { useDispatch } from 'react-redux';
 ```
 
 -  call Redux state in react component : 
 <h5>in JS & TS</h5>
+
 ```bash
 $ const yourState = useSelector((state) => state.sliceName.value)
 ```
 
 -  call Redux state method in react component : 
 <h5>in JS & TS</h5>
+
 ```bash
 $ onClick={() => {dispatch(reduxMethod())}}
 ```
