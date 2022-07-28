@@ -37,22 +37,26 @@ export const store = configureStore({
 <h5>in TS</h5>
 
 ```bash
+import { configureStore } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
+import counter from "./slices/counter";
+
 export const store = configureStore({
-  reducer: {
-    // your reducers
-  },
-});
-
-export type AppDispatch = typeof store.dispatch
-export const useAppDispatch = () => useDispatch<AppDispatch>()
-
-export type RootState = ReturnType<typeof store.getState>
+    reducer: {
+      counter : counter
+    },
+  });
+  
+  export type AppDispatch = typeof store.dispatch
+  export const useAppDispatch = () => useDispatch<AppDispatch>()
+  
+  export type RootState = ReturnType<typeof store.getState>
 ```
 <h6>Configure redux hooks types</h6>
 
 ```bash
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
-import type { RootState, AppDispatch } from '../store/store'
+import type { RootState, AppDispatch } from '../store'
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = () => useDispatch<AppDispatch>()
@@ -82,33 +86,37 @@ export default counterSlice.reducer;
 <h5>in TS</h5>
 
 ```bash
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../store";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-interface SliceState {
-    value: number
-  }  
+export interface CounterState {
+  value: number
+  incrementAmount: number
+}
 
-  const initialState: SliceState = {
-    value: 0,
-  }
+const initialState: CounterState = {
+  value: 0,
+  incrementAmount : 1
+}
 
 export const counterSlice = createSlice({
-    name : "counter",
-    initialState,
-    reducers : {
-        increment : (state) => {
-            state.value ++
-        },
-        decrement : (state) => {
-            state.value --
-        }
-    }
+  name: 'counter',
+  initialState,
+  reducers: {
+    increment: (state) => {
+      state.value += state.incrementAmount
+    },
+    decrement: (state) => {
+      state.value -= state.incrementAmount
+    },
+    changeIncrementAmount: (state, action: PayloadAction<number>) => {
+      state.incrementAmount = action.payload
+    },
+  },
 })
 
-export const {increment, decrement} = counterSlice.actions;
-export const selectCount = (state: RootState) => state.counter.value
-export default counterSlice.reducer;
+export const { increment, decrement, changeIncrementAmount } = counterSlice.actions
+
+export default counterSlice.reducer
 ```
 
 <h3>Acces to Redux state from react app</h3>
@@ -117,12 +125,12 @@ export default counterSlice.reducer;
 <h5>in JS & TS</h5>
 
 ```bash
-$ <Provider store={store}><App/></Provider>
+<Provider store={store}><App/></Provider>
 ```
 
 <h3>Use redux in react component</h3>
 -  import and use useSelector hook
-<h5>in JS & TS</h5>
+<h5>in JS</h5>
 
 ```bash
 import { useSelector } from 'react-redux';
@@ -136,10 +144,15 @@ import { useDispatch } from 'react-redux';
 ```
 
 -  call Redux state in react component : 
-<h5>in JS & TS</h5>
+<h5>in JS</h5>
 
 ```bash
 const yourState = useSelector((state) => state.sliceName.value)
+```
+<h5>in TS</h5>
+
+```bash
+    const count = useSelector((state: RootState) => state.counter.value);
 ```
 
 -  call Redux state method in react component : 
